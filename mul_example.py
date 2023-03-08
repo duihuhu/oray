@@ -36,8 +36,8 @@ def worker(barrier, lock):
   # ).remote()
   time.sleep(10)
   barrier.wait()
-  with lock:
-      print(multiprocessing.current_process().name + " " +str(time.time()))
+  # with lock:
+  print(multiprocessing.current_process().name + " " +str(time.time()))
 
   # time.sleep(10)
   # t1 = time.time()
@@ -47,10 +47,10 @@ def worker(barrier, lock):
   # print(e)
       
 if __name__ == "__main__":
-    process_parallel = 10
+    process_parallel = 2
     barrier = multiprocessing.Barrier(process_parallel)
     lock = multiprocessing.Lock()
-    for num in range(0,10):
+    for num in range(0,process_parallel):
       p1 = multiprocessing.Process(target=worker, args=(barrier, lock))
       p1.start()
     # p2 = multiprocessing.Process(target=worker, args=(barrier, lock))
