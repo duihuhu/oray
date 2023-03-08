@@ -30,6 +30,7 @@ def worker(barrier, remote_node_id):
 
   remote_node_bytes = bytes.fromhex(remote_node_id)
   # print("c")
+  print("d")
   d = dircle.options(
       scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
           #node_id = ray.get_runtime_context().node_id,
