@@ -23,9 +23,8 @@ def worker(barrier):
   # print("a")
   # ray.init(address='auto', _node_ip_address='192.172.200.2')
   head_id = ray.get_runtime_context().node_id.hex()
-  print("head_id", head_id)
-
-  print(ray.state.node_ids())
+  # print("head_id", head_id)
+  # print(ray.state.node_ids())
   remote_node_id = ""
   nodes = ray.nodes()
   for node in nodes:
