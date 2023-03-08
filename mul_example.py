@@ -49,3 +49,6 @@ if __name__ == "__main__":
     barrier = multiprocessing.Barrier(2)
     lock = multiprocessing.Lock()
     p1 = multiprocessing.Process(target=worker, args=(barrier, lock))
+    p2 = multiprocessing.Process(target=worker, args=(barrier, lock))
+    p1.start()
+    p2.start()
