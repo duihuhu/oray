@@ -48,7 +48,7 @@ def worker(barrier, lock):
   print(e)
       
 if __name__ == "__main__":
-    process_parallel = 2
+    process_parallel = 100
     barrier = multiprocessing.Barrier(process_parallel)
     lock = multiprocessing.Lock()
     for num in range(0,process_parallel):
