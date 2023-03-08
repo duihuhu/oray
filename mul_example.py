@@ -44,7 +44,7 @@ def worker(barrier, lock):
   t1 = time.time()
   e = ray.get(d)
   t2=time.time()
-  print(t1, " ", t2, " ", t2-t1)
+  print("time: " , t1, " ", t2, " ", t2-t1)
   print(e)
       
 if __name__ == "__main__":
