@@ -41,8 +41,8 @@ def worker(barrier):
           soft = False
       )
   ).remote()
-  barrier.wait()
   time.sleep(10)
+  barrier.wait()
   # with lock:
   # print(multiprocessing.current_process().name + " " +str(time.time()))
 
