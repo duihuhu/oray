@@ -47,9 +47,12 @@ def worker(barrier, lock):
   # print(e)
       
 if __name__ == "__main__":
-    barrier = multiprocessing.Barrier(2)
+    process_parallel = 10
+    barrier = multiprocessing.Barrier(process_parallel)
     lock = multiprocessing.Lock()
-    p1 = multiprocessing.Process(target=worker, args=(barrier, lock))
-    p2 = multiprocessing.Process(target=worker, args=(barrier, lock))
-    p1.start()
-    p2.start()
+    for num in range(0,10):
+      p1 = multiprocessing.Process(target=worker, args=(barrier, lock))
+      p1.start()
+    # p2 = multiprocessing.Process(target=worker, args=(barrier, lock))
+    # p1.start()
+    # p2.start()
