@@ -10,13 +10,15 @@ import multiprocessing
 #def circle():
 #    return np.zeros(1000000)
 
-@ray.remote
-def dircle():
-    return np.zeros(100000)
 
 def worker(barrier):
   import ray
   ray.init(address='auto', _node_ip_address='192.172.200.2')
+
+  @ray.remote
+  def dircle():
+    return np.zeros(100000)
+
 
   # print("a")
   # ray.init(address='auto', _node_ip_address='192.172.200.2')
