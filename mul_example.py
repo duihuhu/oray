@@ -4,15 +4,15 @@ import os
 import numpy as np
 import time
 import multiprocessing
-ray.init(address='auto', _node_ip_address='192.172.200.2')
+# ray.init(address='auto', _node_ip_address='192.172.200.2')
 
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
 
-@ray.remote
-def dircle():
-    return np.zeros(100000)
+# @ray.remote
+# def dircle():
+#     return np.zeros(100000)
 
 def worker(barrier, lock):
   # head_id = ray.get_runtime_context().node_id.hex()
