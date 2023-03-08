@@ -5,4 +5,4 @@ def dircle():
 
 a = dircle()
 with open("buffer.txt", 'a+') as fd:
-    fd.write(a)
+    fd.write(str(a))
