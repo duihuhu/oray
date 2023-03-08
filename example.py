@@ -3,7 +3,7 @@ import time
 import os
 import numpy as np
 import time
-ray.init(address='192.172.200.2', _node_ip_address='192.172.200.2')
+ray.init(address='auto', _node_ip_address='192.172.200.2')
 
 #@ray.remote
 #def circle():
