@@ -37,7 +37,7 @@ def worker(barrier, lock):
   sleep(10)
   barrier.wait()
   with lock:
-      print(multiprocessing.current_process().name+str(time.time()))
+      print(multiprocessing.current_process().name + " " +str(time.time()))
 
   # time.sleep(10)
   # t1 = time.time()
