@@ -4,7 +4,7 @@ import os
 import numpy as np
 import time
 import multiprocessing
-# ray.init(address='auto', _node_ip_address='192.172.200.2')
+ray.init(address='auto', _node_ip_address='192.172.200.2')
 
 #@ray.remote
 #def circle():
@@ -15,7 +15,7 @@ def dircle():
     return np.zeros(100000)
 
 def worker(barrier):
-  ray.init(address='auto', _node_ip_address='192.172.200.2')
+  # ray.init(address='auto', _node_ip_address='192.172.200.2')
   head_id = ray.get_runtime_context().node_id.hex()
   # print(ray.state.node_ids())
   remote_node_id = ""
@@ -35,7 +35,7 @@ def worker(barrier):
           soft = False
       )
   ).remote()
-  # barrier.wait()
+  barrier.wait()
   time.sleep(10)
   # with lock:
   # print(multiprocessing.current_process().name + " " +str(time.time()))
