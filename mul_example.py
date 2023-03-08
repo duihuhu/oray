@@ -54,5 +54,4 @@ if __name__ == "__main__":
     pslist = [multiprocessing.Process(target=worker,args=(barrier,)) for i in range(process_parallel) ]
     for ps in pslist:
       ps.start()
-      ps.join()
 
