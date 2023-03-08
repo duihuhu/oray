@@ -4,5 +4,5 @@ def dircle():
     #return np.zeros(100000)
 
 a = dircle
-with open("buffer.txt", 'r') as fd:
+with open("buffer.txt", 'a+') as fd:
     fd.write(a);
