@@ -14,11 +14,11 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 def dircle():
     return np.zeros(100000)
 
-def worker(barrier):
-  print("a")
-  # ray.init(address='auto', _node_ip_address='192.172.200.2')
-  head_id = ray.get_runtime_context().node_id.hex()
-  print("head_id", head_id)
+def worker(barrier, remote_node_id):
+  # print("a")
+  # # ray.init(address='auto', _node_ip_address='192.172.200.2')
+  # head_id = ray.get_runtime_context().node_id.hex()
+  # print("head_id", head_id)
 
   # print(ray.state.node_ids())
   # remote_node_id = ""
@@ -28,12 +28,12 @@ def worker(barrier):
   #     if n_id != head_id:
   #         remote_node_id = n_id
 
-  remote_node_bytes = bytes.fromhex(head_id)
-  print("c")
+  remote_node_bytes = bytes.fromhex(remote_node_id)
+  # print("c")
   d = dircle.options(
       scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
           #node_id = ray.get_runtime_context().node_id,
-          node_id != remote_node_bytes,
+          node_id = remote_node_bytes,
           soft = False
       )
   ).remote()
@@ -52,11 +52,19 @@ def worker(barrier):
   print(e)
       
 if __name__ == "__main__":
-    process_parallel = 1
-    barrier = multiprocessing.Barrier(process_parallel)
-    # lock = multiprocessing.Lock()
-    pslist = [multiprocessing.Process(target=worker,args=(barrier,)) for i in range(process_parallel) ]
-    for ps in pslist:
-      ps.start()
-      ps.join(timeout=3)
+  head_id = ray.get_runtime_context().node_id.hex()
+
+  remote_node_id = ""
+  nodes = ray.nodes()
+  for node in nodes:
+      n_id = node['NodeID']
+      if n_id != head_id:
+          remote_node_id = n_id
+  process_parallel = 1
+  barrier = multiprocessing.Barrier(process_parallel)
+  # lock = multiprocessing.Lock()
+  pslist = [multiprocessing.Process(target=worker,args=(barrier,)) for i in range(process_parallel,remote_node_id) ]
+  for ps in pslist:
+    ps.start()
+    ps.join(timeout=3)
 
