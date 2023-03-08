@@ -1,5 +1,5 @@
 import numpy as np
 
 import numpy as np
-data =  np.zeros(10000000)
+data =  np.zeros(15000000)
 print ('%d bytes'%(data.size * data.itemsize))
