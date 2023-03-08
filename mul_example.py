@@ -35,13 +35,13 @@ def worker(barrier):
       )
   ).remote()
   barrier.wait()
-  time.sleep(30)
+  # time.sleep(30)
   # with lock:
   # print(multiprocessing.current_process().name + " " +str(time.time()))
 
   # time.sleep(10)
   t1 = time.time()
-  # e = ray.get(d)
+  e = ray.get(d)
   t2=time.time()
   print("time: " , t1, " ", t2, " ", t2-t1)
   print(e)
