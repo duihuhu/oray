@@ -38,13 +38,13 @@ def worker(barrier, lock):
   time.sleep(5)
   barrier.wait()
   # with lock:
-  print(multiprocessing.current_process().name + " " +str(time.time()))
+  # print(multiprocessing.current_process().name + " " +str(time.time()))
 
   # time.sleep(10)
-  # t1 = time.time()
+  t1 = time.time()
   e = ray.get(d)
-  # t2=time.time()
-  # print(t2-t1)
+  t2=time.time()
+  print(t1, " ", t2)
   print(e)
       
 if __name__ == "__main__":
