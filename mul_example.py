@@ -51,7 +51,7 @@ if __name__ == "__main__":
     process_parallel = 10
     barrier = multiprocessing.Barrier(process_parallel)
     # lock = multiprocessing.Lock()
-    pslist = [Process(target=worker,args=(barrier,)) for i in range(process_parallel) ]
+    pslist = [multiprocessing.Process(target=worker,args=(barrier,)) for i in range(process_parallel) ]
     for ps in pslist:
       ps.start()
       ps.join(timeout=5)
