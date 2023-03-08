@@ -10,41 +10,41 @@ import multiprocessing
 #def circle():
 #    return np.zeros(1000000)
 
-# @ray.remote
-# def dircle():
-#     return np.zeros(100000)
+@ray.remote
+def dircle():
+    return np.zeros(100000)
 
 def worker(barrier, lock):
-  # head_id = ray.get_runtime_context().node_id.hex()
-  # # print(ray.state.node_ids())
-  # remote_node_id = ""
-  # nodes = ray.nodes()
-  # for node in nodes:
-  #     n_id = node['NodeID']
-  #     if n_id != head_id:
-  #         remote_node_id = n_id
+  head_id = ray.get_runtime_context().node_id.hex()
+  # print(ray.state.node_ids())
+  remote_node_id = ""
+  nodes = ray.nodes()
+  for node in nodes:
+      n_id = node['NodeID']
+      if n_id != head_id:
+          remote_node_id = n_id
 
-  # remote_node_bytes = bytes.fromhex(remote_node_id)
+  remote_node_bytes = bytes.fromhex(remote_node_id)
 
 
-  # d = dircle.options(
-  #     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
-  #         #node_id = ray.get_runtime_context().node_id,
-  #         node_id = remote_node_bytes,
-  #         soft = False
-  #     )
-  # ).remote()
-  time.sleep(10)
+  d = dircle.options(
+      scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+          #node_id = ray.get_runtime_context().node_id,
+          node_id = remote_node_bytes,
+          soft = False
+      )
+  ).remote()
+  time.sleep(5)
   barrier.wait()
   # with lock:
-  print(multiprocessing.current_process().name + " " +str(time.time()))
+  # print(multiprocessing.current_process().name + " " +str(time.time()))
 
   # time.sleep(10)
   # t1 = time.time()
-  # e = ray.get(d)
+  e = ray.get(d)
   # t2=time.time()
   # print(t2-t1)
-  # print(e)
+  print(e)
       
 if __name__ == "__main__":
     process_parallel = 2
