@@ -14,7 +14,7 @@ import multiprocessing
 def dircle():
     return np.zeros(100000)
 
-def worker(barrier, lock):
+def worker(barrier):
   ray.init(address='auto', _node_ip_address='192.172.200.2')
   head_id = ray.get_runtime_context().node_id.hex()
   # print(ray.state.node_ids())
@@ -48,11 +48,11 @@ def worker(barrier, lock):
   print(e)
       
 if __name__ == "__main__":
-    process_parallel = 100
+    process_parallel = 10
     barrier = multiprocessing.Barrier(process_parallel)
     lock = multiprocessing.Lock()
     for num in range(0,process_parallel):
-      p1 = multiprocessing.Process(target=worker, args=(barrier, lock))
+      p1 = multiprocessing.Process(target=worker, args=(barrier))
       p1.start()
     # p2 = multiprocessing.Process(target=worker, args=(barrier, lock))
     # p1.start()
