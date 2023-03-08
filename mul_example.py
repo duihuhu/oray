@@ -15,6 +15,7 @@ def dircle():
     return np.zeros(100000)
 
 def worker(barrier, remote_node_id):
+  import ray
   # print("a")
   # # ray.init(address='auto', _node_ip_address='192.172.200.2')
   # head_id = ray.get_runtime_context().node_id.hex()
