@@ -29,8 +29,7 @@ def worker(barrier):
           remote_node_id = n_id
 
   remote_node_bytes = bytes.fromhex(remote_node_id)
-
-
+  print("c")
   d = dircle.options(
       scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
           #node_id = ray.get_runtime_context().node_id,
@@ -38,9 +37,9 @@ def worker(barrier):
           soft = False
       )
   ).remote()
-  print("c")
-  barrier.wait()
   print("d")
+  barrier.wait()
+  print("e")
   time.sleep(10)
   # with lock:
   # print(multiprocessing.current_process().name + " " +str(time.time()))
