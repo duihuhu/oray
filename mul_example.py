@@ -52,7 +52,7 @@ if __name__ == "__main__":
     barrier = multiprocessing.Barrier(process_parallel)
     lock = multiprocessing.Lock()
     for num in range(0,process_parallel):
-      p1 = multiprocessing.Process(target=worker, args=(barrier))
+      p1 = multiprocessing.Process(target=worker, args=(barrier,))
       p1.start()
     # p2 = multiprocessing.Process(target=worker, args=(barrier, lock))
     # p1.start()
