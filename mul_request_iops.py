@@ -10,7 +10,8 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-process_parallel = 10
+task_parallel = 100
+process_parallel = 3
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -54,7 +55,7 @@ reference1 = [ dircle.options(
         node_id = remote_node_bytes,
         soft = False
     )
-).remote() for i in range(process_parallel) ]
+).remote() for i in range(task_parallel) ]
 
 
 reference2 = [ dircle.options(
@@ -63,7 +64,7 @@ reference2 = [ dircle.options(
         node_id = remote_node_bytes,
         soft = False
     )
-).remote() for i in range(process_parallel) ]
+).remote() for i in range(task_parallel) ]
 
 reference3 = [ dircle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
@@ -71,7 +72,7 @@ reference3 = [ dircle.options(
         node_id = remote_node_bytes,
         soft = False
     )
-).remote() for i in range(process_parallel) ]
+).remote() for i in range(task_parallel) ]
 
 # time.sleep(30)
 
