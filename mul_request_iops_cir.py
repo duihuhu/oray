@@ -60,7 +60,7 @@ for j in range(0, process_parallel):
 
 time.sleep(30)
 
-for ref in reference:
+for ref in referenc_list:
   result = worker.options(
   scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
       #node_id = ray.get_runtime_context().node_id,
