@@ -29,16 +29,6 @@ head_node_bytes = bytes.fromhex(head_id)
 def dircle():
     return np.zeros(100000)
 
-@ray.remote
-def worker(ref):
-  t1 = time.time()
-  e = ray.get(ref)
-  t2 = time.time()
-  print("time: " , t1, " ", t2, " ", t2-t1)
-  print(e)
-
-
-
 reference = [ dircle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
         #node_id = ray.get_runtime_context().node_id,
