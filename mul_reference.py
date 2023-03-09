@@ -46,6 +46,7 @@ reference = [ dircle.options(
 ).remote() for i in range(process_parallel) ]
 
 for ref in reference:
+    print(type(ref))
     worker.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
         #node_id = ray.get_runtime_context().node_id,
