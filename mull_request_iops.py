@@ -6,7 +6,7 @@ import time
 import multiprocessing
 import ray
 ray.init(address='auto', _node_ip_address='192.172.200.2')
-n = 0
+global n = 0
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
