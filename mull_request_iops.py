@@ -10,7 +10,7 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-process_parallel = 1
+process_parallel = 3
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -32,21 +32,19 @@ def dircle():
 
 @ray.remote
 def worker(reference):
-
   with open("record.txt", "a+") as fd:
       fd.write("1")
   while 1:
     with open("record.txt", 'r') as fd:
         content = fd.read()
-        print(len(content))
-        time.sleep(1)
-
-  # t1 = time.time()
-  # for ref in reference:
-  #   e = ray.get(ref)
-  # t2 = time.time()
-  # print("time: " , t1, " ", t2, " ", t2-t1)
-  # print(e)
+        if len(content) == process_parallel:
+          break
+  t1 = time.time()
+  for ref in reference:
+    e = ray.get(ref)
+  t2 = time.time()
+  print("time: " , t1, " ", t2, " ", t2-t1)
+  print(e)
 
 
 
@@ -101,5 +99,5 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     soft = False
 )).remote([reference3])
 
-time.sleep(5)
+time.sleep(100)
 
