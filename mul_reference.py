@@ -56,4 +56,4 @@ for ref in reference:
         #node_id = ray.get_runtime_context().node_id,
         node_id = head_node_bytes,
         soft = False
-    )).remote(ref)
+    )).remote([ref])
