@@ -6,7 +6,7 @@ import time
 import multiprocessing
 import ray
 ray.init(address='auto', _node_ip_address='192.172.200.2')
-global n = 0
+n = 0
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
@@ -31,7 +31,7 @@ def dircle():
     return np.zeros(100000)
 
 @ray.remote
-def worker(reference):
+def worker(reference,n):
   n = n + 1 
   print(n)
   # t1 = time.time()
@@ -76,7 +76,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference1])
+)).remote([reference1,n])
 
 # for ref in reference:
 worker.options(
@@ -84,7 +84,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference2])
+)).remote([reference2,n])
 
 # for ref in reference:
 worker.options(
@@ -92,7 +92,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference3])
+)).remote([reference3,n])
 
 time.sleep(5)
 
