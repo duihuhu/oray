@@ -31,9 +31,16 @@ def dircle():
     return np.zeros(100000)
 
 @ray.remote
-def worker(reference,n):
-  n = n + 1 
-  print(n)
+def worker(reference):
+
+  with open("record.txt", "a+") as fd:
+      fd.write("1")
+  while 1:
+    with open("record.txt", 'r') as fd:
+        content = fd.read()
+        print(content)
+        time.sleep(1)
+
   # t1 = time.time()
   # for ref in reference:
   #   e = ray.get(ref)
@@ -68,7 +75,7 @@ reference3 = [ dircle.options(
     )
 ).remote() for i in range(process_parallel) ]
 
-time.sleep(30)
+# time.sleep(30)
 
 # for ref in reference:
 worker.options(
@@ -76,7 +83,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference1,n])
+)).remote([reference1])
 
 # for ref in reference:
 worker.options(
@@ -84,7 +91,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference2,n])
+)).remote([reference2])
 
 # for ref in reference:
 worker.options(
@@ -92,7 +99,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference3,n])
+)).remote([reference3])
 
 time.sleep(5)
 
