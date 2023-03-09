@@ -61,7 +61,7 @@ for j in range(0, process_parallel):
 time.sleep(30)
 i = 0
 for ref in referenc_list:
-  if i == len(referenc_list) - 1:
+  if i == (len(referenc_list) - 1):
     result = worker.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
         #node_id = ray.get_runtime_context().node_id,
