@@ -38,8 +38,10 @@ def worker(reference):
   while 1:
     with open("record.txt", 'r') as fd:
         content = fd.read()
-        print(content)
+        print(len(content))
+        print(process_parallel)
         time.sleep(1)
+
 
   # t1 = time.time()
   # for ref in reference:
