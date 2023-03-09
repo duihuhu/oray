@@ -48,7 +48,7 @@ reference = [ dircle.options(
 ).remote() for i in range(process_parallel) ]
 
 print(type(reference))
-
+print(ray.get(reference))
 for ref in reference:
     print(type(ref))
     worker.options(
@@ -56,5 +56,4 @@ for ref in reference:
         #node_id = ray.get_runtime_context().node_id,
         node_id = head_node_bytes,
         soft = False
-    )
-).remote(ref)
+    )).remote(ref)
