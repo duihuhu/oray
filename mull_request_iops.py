@@ -35,7 +35,7 @@ def dircle():
 def worker(reference):
 
   with open("record.txt", "a+") as fd:
-      n = n + 1
+      global n = n + 1
       fd.write("1")
   # while 1:
   #   with open("record.txt", 'r') as fd:
