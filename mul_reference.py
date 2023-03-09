@@ -9,7 +9,7 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-process_parallel = 2
+process_parallel = 50
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -46,7 +46,6 @@ reference = [ dircle.options(
         soft = False
     )
 ).remote() for i in range(process_parallel) ]
-
 
 for ref in reference:
     worker.options(
