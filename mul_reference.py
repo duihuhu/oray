@@ -47,6 +47,7 @@ reference = [ dircle.options(
     )
 ).remote() for i in range(process_parallel) ]
 
+print(tyep(reference))
 
 for ref in reference:
     worker.options(
