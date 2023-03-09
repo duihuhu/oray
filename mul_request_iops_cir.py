@@ -67,4 +67,4 @@ for ref in reference:
       soft = False
   )).remote([ref])
 
-print(result)
+print(ray.get(result))
