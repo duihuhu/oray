@@ -45,7 +45,7 @@ def worker(reference):
     e = ray.get(ref)
   t2 = time.time()
   print("time: " , t1, " ", t2, " ", t2-t1,)
-  return e
+  print(e)
 
 referenc_list = []
 for j in range(0, process_parallel):
@@ -61,20 +61,9 @@ for j in range(0, process_parallel):
 time.sleep(30)
 i = 0
 for ref in referenc_list:
-  if i == (len(referenc_list) - 1):
-    result = worker.options(
-    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
-        #node_id = ray.get_runtime_context().node_id,
-        node_id = head_node_bytes,
-        soft = False
-    )).remote([ref])
-  else:
-    worker.options(
-    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
-        #node_id = ray.get_runtime_context().node_id,
-        node_id = head_node_bytes,
-        soft = False
-    )).remote([ref])
-  i = i + 1
-
-print(ray.get(result))
+  worker.options(
+  scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+      #node_id = ray.get_runtime_context().node_id,
+      node_id = head_node_bytes,
+      soft = False
+  )).remote([ref])
