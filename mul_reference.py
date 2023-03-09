@@ -32,7 +32,7 @@ def dircle():
 @ray.remote
 def worker(ref):
   t1 = time.time()
-  e = ray.get(d)
+  e = ray.get(ref)
   t2 = time.time()
   print("time: " , t1, " ", t2, " ", t2-t1)
   print(e)
