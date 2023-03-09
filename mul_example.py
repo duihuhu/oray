@@ -49,7 +49,7 @@ def worker(barrier):
   # time.sleep(10)
   t1 = time.time()
   e = ray.get(d)
-  t2=time.time()
+  t2 = time.time()
   print("time: " , t1, " ", t2, " ", t2-t1)
   print(e)
       
@@ -60,5 +60,7 @@ if __name__ == "__main__":
   pslist = [multiprocessing.Process(target=worker,args=(barrier,)) for i in range(process_parallel) ]
   for ps in pslist:
     ps.start()
-    ps.join(timeout=1)
+  for ps in pslist:]
+    ps.join()
+    # ps.join(timeout=1)
 
