@@ -11,7 +11,6 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #def circle():
 #    return np.zeros(1000000)
 process_parallel = 1
-n = 0
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -35,15 +34,12 @@ def dircle():
 def worker(reference):
 
   with open("record.txt", "a+") as fd:
-      global n = n + 1
       fd.write("1")
-  # while 1:
-  #   with open("record.txt", 'r') as fd:
-  #       content = fd.read()
-  #       print(len(content))
-  #       print(process_parallel)
-  #       time.sleep(1)
-  print(n)
+  while 1:
+    with open("record.txt", 'r') as fd:
+        content = fd.read()
+        print(len(content))
+        time.sleep(1)
 
   # t1 = time.time()
   # for ref in reference:
