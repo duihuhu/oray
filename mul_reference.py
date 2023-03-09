@@ -47,6 +47,8 @@ reference = [ dircle.options(
     )
 ).remote() for i in range(process_parallel) ]
 
+sleep(5)
+
 for ref in reference:
     worker.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
@@ -55,5 +57,5 @@ for ref in reference:
         soft = False
     )).remote([ref])
 
-time.sleep(10)
+time.sleep(5)
 
