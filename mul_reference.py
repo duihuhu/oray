@@ -36,6 +36,7 @@ def worker(ref):
   t2 = time.time()
   print("time: " , t1, " ", t2, " ", t2-t1)
   print(e)
+  return e
 
 reference = [ dircle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
