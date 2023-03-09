@@ -6,11 +6,11 @@ import time
 import multiprocessing
 import ray
 ray.init(address='auto', _node_ip_address='192.172.200.2')
-
+os.remove("record.txt")
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-task_parallel = 10
+task_parallel = 100
 process_parallel = 3
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
