@@ -59,13 +59,22 @@ for j in range(0, process_parallel):
   referenc_list.append(reference)
 
 time.sleep(30)
-
+i = 0
 for ref in referenc_list:
-  result = worker.options(
-  scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
-      #node_id = ray.get_runtime_context().node_id,
-      node_id = head_node_bytes,
-      soft = False
-  )).remote([ref])
+  if i == len(referenc_list):
+    result = worker.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = head_node_bytes,
+        soft = False
+    )).remote([ref])
+  else:
+    worker.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = head_node_bytes,
+        soft = False
+    )).remote([ref])
+  i = i + 1
 
 print(ray.get(result))
