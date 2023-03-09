@@ -10,7 +10,7 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-process_parallel = 3
+process_parallel = 10
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -43,8 +43,8 @@ def worker(reference):
   for ref in reference:
     e = ray.get(ref)
   t2 = time.time()
-  print("time: " , t1, " ", t2, " ", t2-t1)
-  print(e)
+  print("time: " , t1, " ", t2, " ", t2-t1,)
+  # print(e)
 
 
 
