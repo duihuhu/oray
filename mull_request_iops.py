@@ -10,7 +10,7 @@ global n = 0
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-process_parallel = 10
+process_parallel = 1
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
