@@ -58,6 +58,7 @@ for j in range(0, process_parallel):
   ).remote() for i in range(task_parallel) ]
   referenc_list.append(reference)
 
+time.sleep(30)
 
 for ref in reference:
   result = worker.options(
