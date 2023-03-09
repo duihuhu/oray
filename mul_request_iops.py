@@ -45,7 +45,7 @@ def worker(reference):
     e = ray.get(ref)
   t2 = time.time()
   print("time: " , t1, " ", t2, " ", t2-t1,)
-  # print(e)
+  return e
 
 
 
@@ -77,7 +77,7 @@ reference3 = [ dircle.options(
 time.sleep(30)
 
 # for ref in reference:
-worker.options(
+result = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
@@ -85,7 +85,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
 )).remote([reference1])
 
 # for ref in reference:
-worker.options(
+result = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
@@ -93,12 +93,13 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
 )).remote([reference2])
 
 # for ref in reference:
-worker.options(
+result = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
 )).remote([reference3])
 
-time.sleep(100)
+# time.sleep(100)
+print(ray.get(result))
 
