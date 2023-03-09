@@ -77,7 +77,7 @@ reference3 = [ dircle.options(
 time.sleep(30)
 
 # for ref in reference:
-result = worker.options(
+result1 = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
@@ -85,7 +85,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
 )).remote([reference1])
 
 # for ref in reference:
-result = worker.options(
+result2 = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
@@ -93,7 +93,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
 )).remote([reference2])
 
 # for ref in reference:
-result = worker.options(
+result3 = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
@@ -101,5 +101,6 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
 )).remote([reference3])
 
 # time.sleep(100)
-print(ray.get(result))
-
+print(ray.get(result1))
+print(ray.get(result2))
+print(ray.get(result3))
