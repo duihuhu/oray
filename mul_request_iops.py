@@ -10,7 +10,7 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-task_parallel = 100
+task_parallel = 30
 process_parallel = 3
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
