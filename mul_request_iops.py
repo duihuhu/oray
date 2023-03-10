@@ -77,7 +77,7 @@ reference3 = [ dircle.options(
     )
 ).remote() for i in range(task_parallel) ]
 
-time.sleep(30)
+time.sleep(10)
 
 # for ref in reference:
 result1 = worker.options(
@@ -103,11 +103,8 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     soft = False
 )).remote([reference3])
 
-ray.wait(result1)
-ray.wait(result2)
-ray.wait(result3)
 
-# time.sleep(100)
+time.sleep(200)
 # print(ray.get(result1))
 # print(ray.get(result2))
 # print(ray.get(result3))
