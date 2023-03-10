@@ -46,8 +46,9 @@ def worker(reference):
     e = ray.get(ref)
   t2 = time.time()
   print("worker time: " , t1, " ", t2, " ", t2-t1,)
-  # return e
   print(e)
+  return e
+
 
 
 
