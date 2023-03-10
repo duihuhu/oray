@@ -34,6 +34,8 @@ def dircle():
 
 @ray.remote
 def worker(reference):
+  print("open")
+  sleep(20)
   with open("record.txt", "a+") as fd:
       fd.write("1")
   while 1:
