@@ -34,8 +34,6 @@ def dircle():
 
 @ray.remote
 def worker(reference):
-  print("open")
-  sleep(20)
   with open("record.txt", "a+") as fd:
       fd.write("1")
   while 1:
@@ -47,7 +45,7 @@ def worker(reference):
   for ref in reference:
     e = ray.get(ref)
   t2 = time.time()
-  print("time: " , t1, " ", t2, " ", t2-t1,)
+  print("worker time: " , t1, " ", t2, " ", t2-t1,)
   # return e
   print(e)
 
@@ -104,7 +102,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     soft = False
 )).remote([reference3])
 
-time.sleep(100)
+# time.sleep(100)
 # print(ray.get(result1))
 # print(ray.get(result2))
 # print(ray.get(result3))
