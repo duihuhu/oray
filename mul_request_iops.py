@@ -101,7 +101,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     soft = False
 )).remote([reference3])
 
-time.sleep(100)
-# print(ray.get(result1))
-# print(ray.get(result2))
-# print(ray.get(result3))
+# time.sleep(100)
+print(ray.get(result1))
+print(ray.get(result2))
+print(ray.get(result3))
