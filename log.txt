@@ -1,0 +1,76 @@
+2023-03-14 08:38:38,510	INFO worker.py:1337 -- Connecting to existing Ray cluster at address: 192.172.200.1:6379...
+2023-03-14 08:38:38,516	INFO worker.py:1523 -- Connected to Ray cluster.
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:38,951 I 235421 235421] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:38,957 I 235423 235423] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:38,965 I 235428 235428] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:38,967 I 235429 235429] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:38,969 I 235433 235433] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:38,977 I 235431 235431] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:38,983 I 235432 235432] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:38,984 I 235430 235430] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,002 I 235422 235422] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,009 I 235426 235426] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,017 I 235427 235427] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,059 I 235424 235424] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,106 I 235419 235419] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,108 I 235418 235418] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,108 I 235425 235425] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,114 I 235420 235420] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,156 I 235434 235434] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,156 I 235439 235439] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,160 I 235437 235437] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,518 I 235621 235621] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,521 I 235607 235607] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,551 I 235627 235627] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,561 I 235673 235673] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,570 I 235685 235685] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,576 I 235597 235597] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,585 I 235569 235569] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,588 I 235679 235679] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,594 I 235750 235750] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,595 I 235603 235603] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,596 I 235690 235690] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,602 I 235620 235620] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,606 I 235635 235635] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,609 I 235660 235660] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,686 I 235605 235605] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,686 I 235604 235604] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,686 I 235632 235632] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,686 I 235582 235582] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,690 I 235629 235629] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,693 I 235882 235882] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,695 I 235681 235681] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,695 I 235763 235763] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,702 I 235691 235691] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,706 I 235799 235799] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,733 I 235855 235855] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,744 I 235687 235687] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,745 I 235636 235636] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,782 I 235976 235976] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,793 I 235638 235638] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,793 I 235695 235695] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,795 I 235647 235647] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,795 I 235972 235972] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,797 I 235964 235964] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,844 I 235639 235639] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,844 I 235693 235693] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,844 I 235664 235664] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,852 I 235977 235977] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,867 I 235982 235982] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,894 I 235653 235653] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,895 I 235643 235643] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,945 I 235606 235606] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,945 I 235613 235613] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,995 I 235615 235615] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:39,995 I 235628 235628] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:40,046 I 235630 235630] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:40,096 I 235644 235644] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[33m(raylet, ip=10.16.0.182)[0m [2023-03-14 08:38:40,147 I 235671 235671] logging.cc:230: Set ray log level from environment variable RAY_BACKEND_LOG_LEVEL to 2
+[2m[36m(worker pid=2452529, ip=10.16.0.180)[0m worker time:  1678783179.3844116   1678783182.2965474   2.9121358394622803
+[2m[36m(worker pid=2452529, ip=10.16.0.180)[0m [0. 0. 0. ... 0. 0. 0.]
+[2m[36m(worker pid=2452531, ip=10.16.0.180)[0m worker time:  1678783179.3844352   1678783182.2613144   2.8768792152404785
+[2m[36m(worker pid=2452531, ip=10.16.0.180)[0m [0. 0. 0. ... 0. 0. 0.]
+[2m[36m(worker pid=2452528, ip=10.16.0.180)[0m worker time:  1678783179.3844109   1678783182.2940524   2.9096415042877197
+[2m[36m(worker pid=2452528, ip=10.16.0.180)[0m [0. 0. 0. ... 0. 0. 0.]
+[2m[36m(worker pid=2452530, ip=10.16.0.180)[0m worker time:  1678783179.3844104   1678783182.2451413   2.8607308864593506
+[2m[36m(worker pid=2452530, ip=10.16.0.180)[0m [0. 0. 0. ... 0. 0. 0.]
