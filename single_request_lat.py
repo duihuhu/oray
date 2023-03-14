@@ -27,7 +27,7 @@ head_node_bytes = bytes.fromhex(head_id)
 
 @ray.remote
 def dircle():
-    return np.zeros(100000)
+    return np.zeros(14300)
 
 reference = [ dircle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(

@@ -11,7 +11,7 @@ if os.path.exists("record.txt"):
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-task_parallel = 10
+task_parallel = 1
 process_parallel = 3
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
@@ -77,7 +77,7 @@ reference3 = [ dircle.options(
     )
 ).remote() for i in range(task_parallel) ]
 
-time.sleep(10)
+time.sleep(30)
 
 # for ref in reference:
 result1 = worker.options(
