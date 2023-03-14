@@ -12,7 +12,7 @@ if os.path.exists("record.txt"):
 #def circle():
 #    return np.zeros(1000000)
 task_parallel = 1000
-process_parallel = 8
+process_parallel = 16
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -117,6 +117,71 @@ reference8 = [ dircle.options(
 ).remote() for i in range(task_parallel) ]
 
 
+
+reference9 = [ dircle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote() for i in range(task_parallel) ]
+
+reference10 = [ dircle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote() for i in range(task_parallel) ]
+
+reference11 = [ dircle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote() for i in range(task_parallel) ]
+
+reference12 = [ dircle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote() for i in range(task_parallel) ]
+
+reference13 = [ dircle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote() for i in range(task_parallel) ]
+
+reference14 = [ dircle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote() for i in range(task_parallel) ]
+
+reference15 = [ dircle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote() for i in range(task_parallel) ]
+
+reference16 = [ dircle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote() for i in range(task_parallel) ]
+
 time.sleep(60)
 
 # for ref in reference:
@@ -180,6 +245,69 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     node_id = head_node_bytes,
     soft = False
 )).remote(reference8)
+
+
+# for ref in reference:
+result9 = worker.options(
+scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+    #node_id = ray.get_runtime_context().node_id,
+    node_id = head_node_bytes,
+    soft = False
+)).remote(reference9)
+
+# for ref in reference:
+result10 = worker.options(
+scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+    #node_id = ray.get_runtime_context().node_id,
+    node_id = head_node_bytes,
+    soft = False
+)).remote(reference10)
+
+# for ref in reference:
+result11 = worker.options(
+scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+    #node_id = ray.get_runtime_context().node_id,
+    node_id = head_node_bytes,
+    soft = False
+)).remote(reference11)
+
+result12 = worker.options(
+scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+    #node_id = ray.get_runtime_context().node_id,
+    node_id = head_node_bytes,
+    soft = False
+)).remote(reference12)
+
+# for ref in reference:
+result13 = worker.options(
+scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+    #node_id = ray.get_runtime_context().node_id,
+    node_id = head_node_bytes,
+    soft = False
+)).remote(reference13)
+
+# for ref in reference:
+result14 = worker.options(
+scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+    #node_id = ray.get_runtime_context().node_id,
+    node_id = head_node_bytes,
+    soft = False
+)).remote(reference14)
+
+# for ref in reference:
+result15 = worker.options(
+scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+    #node_id = ray.get_runtime_context().node_id,
+    node_id = head_node_bytes,
+    soft = False
+)).remote(reference15)
+
+result16 = worker.options(
+scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+    #node_id = ray.get_runtime_context().node_id,
+    node_id = head_node_bytes,
+    soft = False
+)).remote(reference16)
 
 time.sleep(200)
 # print(ray.get(result1))
