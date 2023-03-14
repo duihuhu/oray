@@ -12,7 +12,7 @@ if os.path.exists("record.txt"):
 #def circle():
 #    return np.zeros(1000000)
 task_parallel = 1000
-process_parallel = 4
+process_parallel = 8
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -156,7 +156,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote(reference1)
+)).remote(reference5)
 
 # for ref in reference:
 result6 = worker.options(
@@ -164,7 +164,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote(reference2)
+)).remote(reference6)
 
 # for ref in reference:
 result7 = worker.options(
@@ -172,14 +172,14 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote(reference3)
+)).remote(reference7)
 
 result8 = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote(reference4)
+)).remote(reference8)
 
 time.sleep(200)
 # print(ray.get(result1))
