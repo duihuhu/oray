@@ -12,7 +12,7 @@ if os.path.exists("record.txt"):
 #def circle():
 #    return np.zeros(1000000)
 task_parallel = 1000
-process_parallel = 16
+process_parallel = 1
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -59,7 +59,7 @@ reference1 = [ dircle.options(
         soft = False
     )
 ).remote() for i in range(task_parallel) ]
-
+'''
 reference2 = [ dircle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
         #node_id = ray.get_runtime_context().node_id,
@@ -181,7 +181,7 @@ reference16 = [ dircle.options(
         soft = False
     )
 ).remote() for i in range(task_parallel) ]
-
+'''
 time.sleep(60)
 
 # for ref in reference:
@@ -192,6 +192,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     soft = False
 )).remote(reference1)
 
+'''
 # for ref in reference:
 result2 = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
@@ -308,7 +309,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     node_id = head_node_bytes,
     soft = False
 )).remote(reference16)
-
+'''
 time.sleep(200)
 # print(ray.get(result1))
 # print(ray.get(result2))
