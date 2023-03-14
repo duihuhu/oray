@@ -11,7 +11,7 @@ if os.path.exists("record.txt"):
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-task_parallel = 1
+task_parallel = 1000
 process_parallel = 3
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
@@ -30,7 +30,7 @@ head_node_bytes = bytes.fromhex(head_id)
 
 @ray.remote
 def dircle():
-    return np.zeros(100000)
+    return np.zeros(14300)
 
 @ray.remote
 def worker(reference):
