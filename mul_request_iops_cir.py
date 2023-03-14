@@ -10,7 +10,7 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
-task_parallel = 10
+task_parallel = 1000
 process_parallel = 3
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
@@ -58,19 +58,15 @@ for j in range(0, process_parallel):
   ).remote() for i in range(task_parallel) ]
   referenc_list.append(reference)
 
-time.sleep(30)
-i = 0
-result_list = []
+time.sleep(60)
+
 for ref in referenc_list:
   result = worker.options(
   scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
       #node_id = ray.get_runtime_context().node_id,
       node_id = head_node_bytes,
       soft = False
-  )).remote([ref])
-  result_list.append(result)
+  )).remote(ref)
 
-for result in result_list:
-   print(ray.get(result))
-
+time.sleep(200)
 
