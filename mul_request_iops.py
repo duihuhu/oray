@@ -77,7 +77,7 @@ reference3 = [ dircle.options(
     )
 ).remote() for i in range(task_parallel) ]
 
-time.sleep(30)
+time.sleep(60)
 
 # for ref in reference:
 result1 = worker.options(
