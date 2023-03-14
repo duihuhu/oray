@@ -85,7 +85,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference1])
+)).remote(reference1)
 
 # for ref in reference:
 result2 = worker.options(
@@ -93,7 +93,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference2])
+)).remote(reference2)
 
 # for ref in reference:
 result3 = worker.options(
@@ -101,7 +101,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     #node_id = ray.get_runtime_context().node_id,
     node_id = head_node_bytes,
     soft = False
-)).remote([reference3])
+)).remote(reference3)
 
 
 time.sleep(200)
