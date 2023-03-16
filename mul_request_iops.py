@@ -12,7 +12,7 @@ if os.path.exists("record.txt"):
 #def circle():
 #    return np.zeros(1000000)
 task_parallel = 1000
-process_parallel = 8
+process_parallel = 1 
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -59,7 +59,7 @@ reference1 = [ dircle.options(
         soft = False
     )
 ).remote() for i in range(task_parallel) ]
-
+'''
 reference2 = [ dircle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
         #node_id = ray.get_runtime_context().node_id,
@@ -117,7 +117,7 @@ reference8 = [ dircle.options(
 ).remote() for i in range(task_parallel) ]
 
 
-'''
+
 reference9 = [ dircle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
         #node_id = ray.get_runtime_context().node_id,
@@ -182,8 +182,8 @@ reference16 = [ dircle.options(
     )
 ).remote() for i in range(task_parallel) ]
 '''
-time.sleep(150)
-
+time.sleep(100)
+'''
 # for ref in reference:
 result1 = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
@@ -247,7 +247,7 @@ scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrateg
     soft = False
 )).remote(reference8)
 
-'''
+
 # for ref in reference:
 result9 = worker.options(
 scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
