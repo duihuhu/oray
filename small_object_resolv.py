@@ -30,7 +30,13 @@ def circle(ref):
   print(ray.get(ref))
   return np.zeros(100)
 
-d_ref = square.remote()
+d_ref = square.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = head_node_bytes,
+        soft = False
+    )
+).remote()
 
 c_ref = circle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
