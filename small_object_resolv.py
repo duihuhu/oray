@@ -13,12 +13,12 @@ def square():
 
 @ray.remote()
 def circle(ref):
-  printf("ccccc")
-  printf(ref)
+  print("ccccc")
+  print(ref)
   return np.zeros(1000)
 
 d_ref = square.remote()
 
 c_ref = circle(d_ref)
 
-printf(c_ref)
+print(c_ref)
