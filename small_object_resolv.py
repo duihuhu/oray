@@ -15,7 +15,7 @@ def square():
 def circle(ref):
   print("ccccc")
   print(ray.get(ref))
-  return np.zeros(1000)
+  return np.zeros(100)
 
 d_ref = square.remote()
 
