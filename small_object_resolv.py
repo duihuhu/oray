@@ -19,6 +19,6 @@ def circle(ref):
 
 d_ref = square.remote()
 
-c_ref = circle(d_ref).remote()
+c_ref = circle.remote(d_ref)
 
 print(c_ref)
