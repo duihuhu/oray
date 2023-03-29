@@ -4,7 +4,7 @@ import os
 import numpy as np
 import time
 import multiprocessing
-ray.init(address='auto')
+ray.init(address='auto', _node_ip_address='192.172.200.2')
 
 @ray.remote
 def square():
