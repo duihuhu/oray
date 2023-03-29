@@ -11,7 +11,7 @@ def square():
   time.sleep(10)
   return np.zeros(100)
 
-@ray.remote()
+@ray.remote
 def circle(ref):
   print("ccccc")
   print(ref)
