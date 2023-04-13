@@ -27,8 +27,8 @@ def square():
 @ray.remote
 def circle(reference):
   time.sleep(2)
+  print(len(reference))
   for ref in reference:
-    print("a")
     t1 = time.time()
     e = ray.get(ref)
     t2 = time.time()
