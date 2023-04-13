@@ -31,7 +31,7 @@ def circle(reference):
     t1 = time.time()
     e = ray.get(ref)
     t2 = time.time()
-    print("time", t2-t1)
+    print("time for get", t2-t1)
     print(e)
   return np.zeros(100)
 
