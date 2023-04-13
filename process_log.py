@@ -6,4 +6,5 @@ with open("log.txt", 'r') as fd:
       content = line.split(" ")
       arr.append(float(content[-1]))
 
+print(len(arr))
 print(np.median(arr))
