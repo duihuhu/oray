@@ -35,14 +35,6 @@ def circle(reference):
     print("time for get", t2-t1)
   return np.zeros(100)
 
-# d_ref = square.options(
-#     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
-#         #node_id = ray.get_runtime_context().node_id,
-#         node_id = head_node_bytes,
-#         soft = False
-#     )
-# ).remote()
-
 
 reference = [ square.options(
   scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
@@ -59,6 +51,6 @@ c_ref = circle.options(
         node_id = remote_node_bytes,
         soft = False
     )
-).remote([reference])
+).remote(reference)
 
 print(ray.get(c_ref))
