@@ -32,7 +32,6 @@ def circle(reference):
     e = ray.get(ref)
     t2 = time.time()
     print("time for get", t2-t1)
-    print(e)
   return np.zeros(100)
 
 # d_ref = square.options(
