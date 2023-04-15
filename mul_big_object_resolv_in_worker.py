@@ -38,7 +38,7 @@ def circle(reference):
 reference = [ square.options(
   scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
       #node_id = ray.get_runtime_context().node_id,
-      node_id = head_node_bytes,
+      node_id = remote_node_bytes,
       soft = False
   )
 ).remote() for i in range(ref_number) ]
@@ -47,7 +47,7 @@ reference = [ square.options(
 c_ref = circle.options(
     scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
         #node_id = ray.get_runtime_context().node_id,
-        node_id = remote_node_bytes,
+        node_id = head_node_bytes,
         soft = False
     )
 ).remote(reference)
