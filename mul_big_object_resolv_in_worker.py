@@ -43,4 +43,13 @@ reference = [ square.options(
   )
 ).remote() for i in range(ref_number) ]
 
-print(ray.get(reference))
+
+c_ref = circle.options(
+    scheduling_strategy=ray.util.scheduling_strategies.NodeAffinitySchedulingStrategy(
+        #node_id = ray.get_runtime_context().node_id,
+        node_id = remote_node_bytes,
+        soft = False
+    )
+).remote(reference)
+
+print(ray.get(c_ref))
