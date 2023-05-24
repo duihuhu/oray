@@ -1,6 +1,6 @@
 #!/bin/bash
 n=5
-for((j=1; j<=16; j=$j*2))
+for((j=1; j<=16; j=j*2))
 do
   for i in `seq 1 $n`
   do
