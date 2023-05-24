@@ -16,5 +16,5 @@ for i in [1,2,4,8,16]:
             end_time = float(content[-4])
     time_list.append(end_time-start_time)
     # print(end_time, start_time, end_time-start_time)
-  print(i, np.median(time_list))
+  print(i, (i*3000*1144000)/(np.median(time_list)*1024*1024))
 
