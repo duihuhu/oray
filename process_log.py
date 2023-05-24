@@ -10,8 +10,6 @@ for i in [1,2,4,8,16]:
       for line in fd.readlines():
         if 'time:' in line:
           content = line.split(" ")
-          start_time = content[-7]
-          end_time = content[-4]
           print(content)
           if start_time > float(content[-7]):
             start_time = float(content[-7])
