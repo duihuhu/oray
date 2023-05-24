@@ -8,6 +8,6 @@ do
       rm -f /home/hucc/ray/python/record.txt
     fi
     python3.8 mul_request_iops_cir.py $j &> data/log_$i_$j.txt
-    sleep(5)
+    sleep 5
   done
 done
