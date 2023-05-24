@@ -1,10 +1,10 @@
 import numpy as np
 pre_name = 'log'
 for i in [1,2,4,8,16]:
-  start_time = 1884927212
-  end_time = -1
   time_list = []
   for j in range(1,6):
+    start_time = 1884927212
+    end_time = -1
     filename = "data/"+pre_name+"_"+str(i)+"_"+str(j)+".txt"
     with open(filename, 'r') as fd:
       for line in fd.readlines():
