@@ -10,13 +10,13 @@ for i in [1,2,4,8,16]:
       for line in fd.readlines():
         if 'time:' in line:
           content = line.split(" ")
-          start_time = content[-3]
-          end_time = content[-2]
+          start_time = content[-8]
+          end_time = content[-4]
           print(content)
-          if start_time > float(content[-3]):
-            start_time = float(content[-3])
-          if end_time < float(content[-2]):
-            end_time = float(content[-2])
+          if start_time > float(content[-8]):
+            start_time = float(content[-8])
+          if end_time < float(content[-4]):
+            end_time = float(content[-4])
     time_list.append(end_time-start_time)
   print(i, j, np.median(time_list), time_list)
 
