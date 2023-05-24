@@ -1,5 +1,5 @@
 import numpy as np
-pre_name = 'log_'
+pre_name = 'log'
 for i in [1,2,4,8,16]:
   start_time = 10000
   end_time = -1
