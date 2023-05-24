@@ -12,9 +12,9 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #def circle():
 #    return np.zeros(1000000)
 task_parallel = 1000
-process_parallel = sys.argv[1]
+process_parallel = int(sys.argv[1])
 s_time = 30
-if sys.argv[1] == 16:
+if int(sys.argv[1]) == 16:
   s_time = 60
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
