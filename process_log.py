@@ -8,7 +8,7 @@ for i in [1,2,4,8,16]:
     filename = "data/"+pre_name+"_"+str(i)+"_"+str(j)+".txt"
     with open(filename, 'r') as fd:
       for line in fd.readlines():
-        if time in line:
+        if 'time:' in line:
           content = line.split(" ")
           start_time = content[-3]
           end_time = content[-2]
