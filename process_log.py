@@ -12,6 +12,7 @@ for i in [1,2,4,8,16]:
           content = line.split(" ")
           start_time = content[-3]
           end_time = content[-2]
+          print(content)
           if start_time > float(content[-3]):
             start_time = float(content[-3])
           if end_time < float(content[-2]):
