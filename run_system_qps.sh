@@ -7,7 +7,7 @@ do
     if [ -f "/home/hucc/ray/python/record.txt" ];then
       rm -f /home/hucc/ray/python/record.txt
     fi
-    python3.8 mul_request_iops_cir.py $j &> data/log_$i\_$j.txt
-    sleep 5
+    python3.8 mul_request_iops_cir.py $j &> data/log_$j\_$i.txt
+    sleep 10
   done
 done
