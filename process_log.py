@@ -15,6 +15,6 @@ for i in [1,2,4,8,16]:
           if end_time < float(content[-4]):
             end_time = float(content[-4])
     time_list.append(end_time-start_time)
-    print(end_time-start_time)
+    print(end_time, start_time, end_time-start_time)
   # print(i, np.median(time_list))
 
