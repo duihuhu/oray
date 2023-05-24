@@ -5,13 +5,17 @@ import numpy as np
 import time
 import multiprocessing
 import ray
+import sys
 ray.init(address='auto', _node_ip_address='192.172.200.2')
 
 #@ray.remote
 #def circle():
 #    return np.zeros(1000000)
 task_parallel = 1000
-process_parallel = 3
+process_parallel = sys.argv[1]
+s_time = 30
+if sys.argv[1] == 16:
+  s_time = 60
 # print("a")
 # ray.init(address='auto', _node_ip_address='192.172.200.2')
 head_id = ray.get_runtime_context().node_id.hex()
@@ -29,7 +33,7 @@ head_node_bytes = bytes.fromhex(head_id)
 
 @ray.remote
 def dircle():
-    return np.zeros(100000)
+    return np.zeros(14300*10)
 
 @ray.remote
 def worker(reference):
@@ -58,7 +62,7 @@ for j in range(0, process_parallel):
   ).remote() for i in range(task_parallel) ]
   referenc_list.append(reference)
 
-time.sleep(60)
+# time.sleep(60)
 
 for ref in referenc_list:
   result = worker.options(
@@ -68,5 +72,5 @@ for ref in referenc_list:
       soft = False
   )).remote(ref)
 
-time.sleep(200)
+time.sleep(s_time)
 
