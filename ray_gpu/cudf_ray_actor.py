@@ -6,6 +6,7 @@ ray.init()
 @ray.remote(num_gpus=1)
 class Counter:
     def __init__(self):
+        import cudf
         
     def worker(self):
         t1 = time.time()
