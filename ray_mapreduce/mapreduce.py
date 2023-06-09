@@ -1,4 +1,5 @@
-import ray        
+import ray
+import numpy as np
 ray.init()
         # include_webui=False,
         # ignore_reinit_error=True
