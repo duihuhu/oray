@@ -7,8 +7,9 @@ ray.init()
 class Counter:
     def __init__(self):
         import cudf
-        
+        import time
     def worker(self, filename):
+
         tips_df = cudf.read_csv(filename)
         tips_df['tip_percentage'] = tips_df['tip'] / tips_df['total_bill'] * 100
         return tips_df
