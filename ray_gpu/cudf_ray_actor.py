@@ -8,10 +8,10 @@ class Counter:
     def __init__(self):
         import cudf
         
-    def worker(self):
+    def worker(self, filename):
         # t0 = time.time()
         # print("t0: ", t0)
-        tips_df = cudf.read_csv("/home/hucc/cuda/cudf/tips.csv")
+        tips_df = cudf.read_csv(filename)
         tips_df['tip_percentage'] = tips_df['tip'] / tips_df['total_bill'] * 100
         return tips_df
 
@@ -31,8 +31,7 @@ class Counter:
 counter = Counter.remote()
 # t_start = time.time()
 # print("start: ", t_start)
-ref = counter.worker.remote()
-print(ref)
+ref = counter.worker.remote("/home/hucc/cuda/cudf/tips.csv")
 ref1 = counter.worker1.remote([ref])
 res = ray.get(ref1)
 # t4 = time.time()
@@ -42,8 +41,7 @@ print(res)
 # print("aaaa")
 t_start = time.time()
 # print("start: ", t_start)
-ref = counter.worker.remote()
-print(ref)
+ref = counter.worker.remote("/home/hucc/cuda/cudf/tips.csv")
 ref1 = counter.worker1.remote([ref])
 res = ray.get(ref1)
 t4 = time.time()
