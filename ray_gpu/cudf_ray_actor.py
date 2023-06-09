@@ -33,7 +33,6 @@ counter = Counter.remote()
 # print("start: ", t_start)
 ref = counter.worker.remote()
 print(ref)
-
 ref1 = counter.worker1.remote([ref])
 res = ray.get(ref1)
 # t4 = time.time()
