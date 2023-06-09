@@ -9,17 +9,18 @@ class Counter:
         import cudf
         import time
     def worker(self, filename):
-        t0 = time.time()
         tips_df = cudf.read_csv(filename)
         tips_df['tip_percentage'] = tips_df['tip'] / tips_df['total_bill'] * 100
-        t1 = time.time()
-        print("read: ", t1-t0)
+
         return tips_df
 
     def worker1(self, ref):
         tips_df = ray.get(ref)
         # tips_df_data =  tips_df[0]
+        t0 = time.time()
         res = tips_df[0].groupby('size').tip_percentage.mean()
+        t1 = time.time()
+        print("groupby: ", t1-t0)
         # t3 = time.time()
         # print("t3: ", t3)
         return res
