@@ -1,6 +1,7 @@
 import ray
 import numpy as np
 from collections import defaultdict
+import wikipedia
 
 ray.init()
         # include_webui=False,
