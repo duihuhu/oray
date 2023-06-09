@@ -1,8 +1,8 @@
-import ray
-ray.init(
-        include_webui=False,
-        ignore_reinit_error=True
-        )
+import ray        
+ray.init()
+        # include_webui=False,
+        # ignore_reinit_error=True
+
 
 @ray.remote
 class Mapper(object):
