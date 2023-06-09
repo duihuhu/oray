@@ -3,7 +3,14 @@ ray.init()
         # include_webui=False,
         # ignore_reinit_error=True
 
+class Stream(object):
+    def __init__(self, elements):
+        self.elements = elements
 
+    def next(self):
+        i = np.random.randint(0, len(self.elements))
+        return self.elements[i]
+        
 @ray.remote
 class Mapper(object):
     def __init__(self, title_stream):
