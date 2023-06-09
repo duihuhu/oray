@@ -9,9 +9,11 @@ class Counter:
         import cudf
         import time
     def worker(self, filename):
-
+        t0 = time.time()
         tips_df = cudf.read_csv(filename)
         tips_df['tip_percentage'] = tips_df['tip'] / tips_df['total_bill'] * 100
+        t1 = time.time()
+        print("read: ", t1-t0)
         return tips_df
 
     def worker1(self, ref):
