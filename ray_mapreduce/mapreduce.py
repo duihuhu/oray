@@ -34,7 +34,7 @@ class Mapper(object):
         #     # p = wikipedia.page(s)
         #     article = wikipedia.page(s).content
 
-        p = wikipedia.page(self.title_stream.next(), auto_suggest=False, redirect=True, preload=False)
+        article = wikipedia.page(self.title_stream.next(), auto_suggest=False, redirect=True, preload=False).content
 
         # 分词&统计词频
         self.word_counts.append(Counter(re.split(r" |\n", article)))
