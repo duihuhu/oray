@@ -55,6 +55,7 @@ class Reducer(object):
 
         # TODO(rkn): We should process these out of order using ray.wait.
         for count_id in count_ids:
+            print(ray.get(count_id))
             for k, v in ray.get(count_id):
                 word_count_sum[k] += v
         return word_count_sum
