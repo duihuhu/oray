@@ -26,7 +26,14 @@ class Mapper(object):
 
     def get_new_article(self):
         # 获取文章内容
-        article = wikipedia.page(self.title_stream.next()).content
+        try:
+            # p = wikipedia.page(string)
+            article = wikipedia.page(self.title_stream.next()).content
+        except wikipedia.DisambiguationError as e:
+            s = random.choice(e.options)
+            # p = wikipedia.page(s)
+            article = wikipedia.page(s).content
+
         # 分词&统计词频
         self.word_counts.append(Counter(re.split(r" |\n", article)))
         self.num_articles_processed += 1
@@ -55,7 +62,6 @@ class Reducer(object):
 
         # TODO(rkn): We should process these out of order using ray.wait.
         for count_id in count_ids:
-            print(ray.get(count_id))
             for k, v in ray.get(count_id):
                 word_count_sum[k] += v
         return word_count_sum
@@ -77,7 +83,7 @@ mappers = [Mapper.remote(stream) for stream in streams]
 reducers = [Reducer.remote(key, *mappers) for key in keys]
 
 # Map & Reduce
-for article_index in range(1):
+for article_index in range(10):
     print("article index = {}".format(article_index))
     wordcounts = {}
     counts = ray.get([reducer.next_reduce_result.remote(article_index)
