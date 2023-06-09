@@ -26,13 +26,15 @@ class Mapper(object):
 
     def get_new_article(self):
         # 获取文章内容
-        try:
-            # p = wikipedia.page(string)
-            article = wikipedia.page(self.title_stream.next()).content
-        except wikipedia.DisambiguationError as e:
-            s = random.choice(e.options)
-            # p = wikipedia.page(s)
-            article = wikipedia.page(s).content
+        # try:
+        #     # p = wikipedia.page(string)
+        #     article = wikipedia.page(self.title_stream.next()).content
+        # except wikipedia.DisambiguationError as e:
+        #     s = random.choice(e.options)
+        #     # p = wikipedia.page(s)
+        #     article = wikipedia.page(s).content
+
+        p = wikipedia.page(self.title_stream.next(), auto_suggest=False, redirect=True, preload=False)
 
         # 分词&统计词频
         self.word_counts.append(Counter(re.split(r" |\n", article)))
