@@ -26,9 +26,7 @@ class Mapper(object):
 
     def get_new_article(self):
         # 获取文章内容
-        print(self.word_counts)
         article = wikipedia.page(self.title_stream.next()).content
-        print(article)
         # 分词&统计词频
         self.word_counts.append(Counter(re.split(r" |\n", article)))
         self.num_articles_processed += 1
