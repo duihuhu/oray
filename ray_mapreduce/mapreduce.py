@@ -76,7 +76,7 @@ mappers = [Mapper.remote(stream) for stream in streams]
 reducers = [Reducer.remote(key, *mappers) for key in keys]
 
 # Map & Reduce
-for article_index in range(10):
+for article_index in range(1):
     print("article index = {}".format(article_index))
     wordcounts = {}
     counts = ray.get([reducer.next_reduce_result.remote(article_index)
