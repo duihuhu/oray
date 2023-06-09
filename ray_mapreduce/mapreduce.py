@@ -4,6 +4,7 @@ from collections import defaultdict
 import wikipedia
 from collections import Counter
 import re
+import heapq
 ray.init()
         # include_webui=False,
         # ignore_reinit_error=True
