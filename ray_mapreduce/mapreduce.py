@@ -29,6 +29,7 @@ class Mapper(object):
         article = wikipedia.page(self.title_stream.next()).content
         # 分词&统计词频
         self.word_counts.append(Counter(re.split(r" |\n", article)))
+        print(self.word_counts)
         self.num_articles_processed += 1
 
     def get_range(self, article_index, keys):
