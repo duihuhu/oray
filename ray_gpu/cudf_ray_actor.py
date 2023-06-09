@@ -23,7 +23,7 @@ class Counter:
         print("t2: ", t2)
         # tips_df_data =  tips_df[0]
         res = tips_df[0].groupby('size').tip_percentage.mean()
-        t2 = time.time()
+        t3 = time.time()
         print("t3: ", t3)
         return res
 
