@@ -9,11 +9,9 @@ class Counter:
         import cudf
         
     def worker(self):
-        t0 = time.time()
         tips_df = pandas.read_csv("/home/hucc/cuda/cudf/tips.csv")
         tips_df['tip_percentage'] = tips_df['tip'] / tips_df['total_bill'] * 100
-        t1 = time.time()
-        print("read: ", t1-t0)
+
         return tips_df
 
     def worker1(self, ref):
@@ -23,7 +21,10 @@ class Counter:
         # t2 = time.time()
         # print("t2: ", t2)
         # tips_df_data =  tips_df[0]
+        t0 = time.time()
         res = tips_df[0].groupby('size').tip_percentage.mean()
+        t1 = time.time()
+        print("groupby: ", t1-t0)
         # t3 = time.time()
         # print("t3: ", t3)
         return res
