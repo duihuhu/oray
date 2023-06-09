@@ -1,4 +1,4 @@
-#import cudf
+import cudf
 import ray
 import time
 ray.init()
@@ -6,9 +6,7 @@ ray.init()
 @ray.remote(num_gpus=1)
 class Counter:
     def __init__(self):
-        import cudf
-        import time
-
+        
     def worker(self):
         t1 = time.time()
         tips_df = cudf.read_csv("/home/hucc/cuda/cudf/tips.csv")
