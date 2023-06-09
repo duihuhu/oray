@@ -16,12 +16,13 @@ class Counter:
         return tips_df
 
     def worker1(self, ref):
-        t1 = time.time()
         tips_df = ray.get(ref)
-        t2 = time.time()
-        print("get object: ", t2-t1)
+
         # tips_df_data =  tips_df[0]
+        t1 = time.time()
         res = tips_df[0].groupby('size').tip_percentage.mean()
+        t2 = time.time()
+        print("groupby: ", t2-t1)
         # t3 = time.time()
         # print("t3: ", t3)
         return res
