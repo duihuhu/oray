@@ -22,11 +22,9 @@ class Counter:
 
 # Create an actor from this class.
 counter = Counter.remote()
-t1 = time.time()
-print(t1)
 ref = counter.worker.remote()
 ref1 = counter.worker1.remote([ref])
 res = ray.get(ref1)
 t2 = time.time()
-print("total:", t2-t1)
+print("total:", t2)
 print(res)
