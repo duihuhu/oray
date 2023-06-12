@@ -15,7 +15,7 @@ def createCudaWordCountKernel():
 
 def createBigDataset(filename):
     print("reading data")
-    dataset = file(filename).read()
+    dataset = open(filename).read()
     print("creating a big dataset")
     words = " ".join(dataset.split()) # in order to get rid of \t and \n
     chars = [ord(x) for x in words]
