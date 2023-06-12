@@ -1,3 +1,4 @@
+import os
 def get_non_empty_lines(lines):
     """
         returns non empty lines from a list of lines
