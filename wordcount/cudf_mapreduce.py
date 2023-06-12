@@ -30,11 +30,13 @@ def get_txt_lines(data_dir):
 
 data_dir = "/home/hucc/books"
 print("File Read Time:")
-%time txt_ls,fname_ls = get_txt_lines(data_dir)
+# %time 
+txt_ls,fname_ls = get_txt_lines(data_dir)
 df = cudf.DataFrame()
 
 print("\nCUDF  Creation Time:")
-%time df['text'] = nvstrings.to_device(txt_ls)
+# %time 
+df['text'] = nvstrings.to_device(txt_ls)
 
 df['label'] = nvstrings.to_device(fname_ls)
 title_label_df = df['label'].str.split('___')
