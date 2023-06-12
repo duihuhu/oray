@@ -22,8 +22,8 @@ def createBigDataset(filename):
     bigdataset = []
     for k in range(100):
         bigdataset += chars
-    print "dataset size = ", len(bigdataset)
-    print "creating numpy array of dataset"
+    print("dataset size = ", len(bigdataset))
+    print("creating numpy array of dataset")
     bignumpyarray = numpy.array( bigdataset, dtype=numpy.uint8)
     return bignumpyarray
 
@@ -36,8 +36,8 @@ def wordCount(wordcountkernel, bignumpyarray):
     stop = time.time()
     seconds = (stop-start)
     estimatepersecond = (datasetsize/seconds)/(1024*1024*1024)
-    print "word count took ", seconds*1000, " milliseconds"
-    print "estimated throughput ", estimatepersecond, " Gigabytes/s"
+    print("word count took ", seconds*1000, " milliseconds")
+    print("estimated throughput ", estimatepersecond, " Gigabytes/s")
     return wordcount
 
 if __name__ == "__main__":
