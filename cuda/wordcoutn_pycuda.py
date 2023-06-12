@@ -14,9 +14,9 @@ def createCudaWordCountKernel():
     return wordcountkernel
 
 def createBigDataset(filename):
-    print "reading data"
+    print("reading data")
     dataset = file(filename).read()
-    print "creating a big dataset"
+    print("creating a big dataset")
     words = " ".join(dataset.split()) # in order to get rid of \t and \n
     chars = [ord(x) for x in words]
     bigdataset = []
@@ -28,7 +28,7 @@ def createBigDataset(filename):
     return bignumpyarray
 
 def wordCount(wordcountkernel, bignumpyarray):
-    print "uploading array to gpu"
+    print("uploading array to gpu")
     gpudataset = gpuarray.to_gpu(bignumpyarray)
     datasetsize = len(bignumpyarray)
     start = time.time()
