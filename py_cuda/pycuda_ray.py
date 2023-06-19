@@ -32,5 +32,5 @@ def worker():
   cuda.memcpy_dtoh(a_doubled, a_gpu)
   print(a_doubled)
   print(a)
-
+  return 1
 print(worker.remote())
