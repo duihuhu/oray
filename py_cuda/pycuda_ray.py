@@ -7,6 +7,9 @@ import time
 ray.init()
 @ray.remote(num_gpus=0.5)
 def worker():
+  import pycuda.driver as cuda
+  import pycuda.autoinit
+  from pycuda.compiler import SourceModule
   a = np.random.randn(4,4)
   a = a.astype(np.float32)
 
