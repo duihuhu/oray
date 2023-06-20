@@ -4,7 +4,7 @@ import time
 ray.init()
 @ray.remote
 def worker(): 
-    return 1
+    return np.zeros(1024000)
 
 ref = worker.remote()
 print(ray.get(ref))
