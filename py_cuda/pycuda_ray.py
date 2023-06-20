@@ -14,8 +14,6 @@ def worker():
   a = a.astype(np.float32)
 
   a_gpu = cuda.mem_alloc(a.nbytes)
-  print(type(a_gpu), int(a_gpu))
-
   cuda.memcpy_htod(a_gpu, a)
 
   mod = SourceModule("""
