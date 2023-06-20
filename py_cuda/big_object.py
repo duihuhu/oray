@@ -1,6 +1,6 @@
-#import cudf
 import ray
 import time
+import numpy as np
 ray.init()
 @ray.remote
 def worker(): 
