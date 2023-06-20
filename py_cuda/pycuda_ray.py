@@ -14,6 +14,7 @@ def worker():
   a = a.astype(np.float32)
 
   a_gpu = cuda.mem_alloc(a.nbytes)
+  print(type(a_gpu), int(a_gpu))
 
   cuda.memcpy_htod(a_gpu, a)
 
@@ -30,7 +31,6 @@ def worker():
 
   a_doubled = np.empty_like(a)
   cuda.memcpy_dtoh(a_doubled, a_gpu)
-  print(type(a_gpu))
   return a_gpu
   
 ref = worker.remote()
