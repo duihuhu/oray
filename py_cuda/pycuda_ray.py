@@ -30,9 +30,8 @@ def worker():
 
   a_doubled = np.empty_like(a)
   cuda.memcpy_dtoh(a_doubled, a_gpu)
-  print(a_doubled)
-  print(a)
-  return a
+  print(type(a_gpu))
+  return a_gpu
   
 ref = worker.remote()
 print(ray.get(ref))
