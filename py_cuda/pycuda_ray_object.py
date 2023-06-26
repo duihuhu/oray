@@ -5,7 +5,7 @@ import numpy as np
 import ray
 import time
 class CudaAddress:
-  def __init__(address):
+  def __init__(self, address):
     self.address = address
 
 ray.init()
