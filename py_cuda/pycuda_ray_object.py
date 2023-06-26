@@ -34,7 +34,7 @@ def worker():
 
   a_doubled = np.empty_like(a)
   cuda.memcpy_dtoh(a_doubled, a_gpu)
-  CudaAddress address(int(a_gpu)0
+  address =  CudaAddress(int(a_gpu))
   return address
   
 ref = worker.remote()
