@@ -4,6 +4,10 @@ from pycuda.compiler import SourceModule
 import numpy as np
 import ray
 import time
+class CudaAddress:
+  def __init__(address):
+    self.address = address
+
 ray.init()
 @ray.remote(num_gpus=0.5)
 def worker():
@@ -14,7 +18,6 @@ def worker():
   a = a.astype(np.float32)
 
   a_gpu = cuda.mem_alloc(a.nbytes)
-  print(type(a_gpu), int(a_gpu))
 
   cuda.memcpy_htod(a_gpu, a)
 
@@ -31,7 +34,8 @@ def worker():
 
   a_doubled = np.empty_like(a)
   cuda.memcpy_dtoh(a_doubled, a_gpu)
-  return a_gpu
+  CudaAddress address(int(a_gpu)0
+  return address
   
 ref = worker.remote()
 print(ray.get(ref))
