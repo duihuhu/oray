@@ -38,4 +38,5 @@ def worker():
   return address
   
 ref = worker.remote()
-print(ray.get(ref))
+add = ray.get(ref)
+print(add.address)
