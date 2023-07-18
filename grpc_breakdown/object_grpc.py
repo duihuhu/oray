@@ -12,7 +12,7 @@ ray.init(address='auto', _node_ip_address='192.172.200.2')
 #def circle():
 #    return np.zeros(1000000)
 task_parallel = 10
-process_parallel = 1
+process_parallel = int(sys.argv[1])
 s_time = 30
 if int(sys.argv[1]) == 16:
   s_time = 60
@@ -37,13 +37,13 @@ def dircle():
 
 @ray.remote
 def worker(reference):
-  with open("record.txt", "a+") as fd:
-      fd.write("1")
-  while 1:
-    with open("record.txt", 'r') as fd:
-        content = fd.read()
-        if len(content) == process_parallel:
-          break
+  # with open("record.txt", "a+") as fd:
+  #     fd.write("1")
+  # while 1:
+  #   with open("record.txt", 'r') as fd:
+  #       content = fd.read()
+  #       if len(content) == process_parallel:
+  #         break
   
   for ref in reference:
     t1 = time.time()
