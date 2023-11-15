@@ -44,8 +44,9 @@ def worker(reference):
   t1 = time.time()
   for ref in reference:
     e = ray.get(ref)
+    print(e)
   t2 = time.time()
-  print("time: " , t1, " ", t2, " ", t2-t1,)
+  print("time: " , t1, " ", t2, " ", t2-t1)
   return 1
 
 referenc_list = []
