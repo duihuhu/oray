@@ -8,7 +8,7 @@ import ray
 import sys
 ray.init(address='auto', _node_ip_address='192.172.200.2')
 
-task_parallel = 300
+task_parallel = 1000
 process_parallel = int(sys.argv[1])
 s_time = 30
 if int(sys.argv[1]) == 16:
@@ -67,7 +67,7 @@ for ref in referenc_list:
       #node_id = ray.get_runtime_context().node_id,
       node_id = head_node_bytes,
       soft = False
-  )).remote(ref)
+  )).remote(m)
 
 time.sleep(s_time)
 
