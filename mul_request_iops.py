@@ -30,7 +30,7 @@ head_node_bytes = bytes.fromhex(head_id)
 
 @ray.remote
 def dircle():
-    return np.zeros(14300)
+    return np.zeros(14300*10)
 
 @ray.remote
 def worker(reference):
