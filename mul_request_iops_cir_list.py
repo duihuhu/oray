@@ -45,8 +45,8 @@ def worker(reference):
   # for ref in reference:
   e = ray.get(reference)
   t2 = time.time()
-  print("time: " , t1, " ", t2, " ", t2-t1, e)
-  return 1
+  print("time: " , t1, " ", t2, " ", t2-t1)
+  return e
 
 referenc_list = []
 for j in range(0, process_parallel):
