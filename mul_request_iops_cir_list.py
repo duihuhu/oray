@@ -67,7 +67,7 @@ for ref in referenc_list:
       #node_id = ray.get_runtime_context().node_id,
       node_id = head_node_bytes,
       soft = False
-  )).remote(m)
+  )).remote(ref)
 
 time.sleep(s_time)
 
