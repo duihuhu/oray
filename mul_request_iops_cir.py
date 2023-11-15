@@ -8,10 +8,7 @@ import ray
 import sys
 ray.init(address='auto', _node_ip_address='192.172.200.2')
 
-#@ray.remote
-#def circle():
-#    return np.zeros(1000000)
-task_parallel = 3000
+task_parallel = 300
 process_parallel = int(sys.argv[1])
 s_time = 30
 if int(sys.argv[1]) == 16:
